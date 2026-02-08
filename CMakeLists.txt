@@ -11,11 +11,11 @@ arieo_engine_project(
     PUBLIC_INCLUDE_FOLDERS
         ${CMAKE_CURRENT_SOURCE_DIR}/public/include
     PACKAGES
-        ArieoEngine-Core
-        ArieoEngine-Interface-RHI
+        Arieo-Core
+        Arieo-Interface-RHI
     INTERFACES
-        ArieoEngine-Core::arieo_core
-        ArieoEngine-Interface-RHI::arieo_rhi_interface
+        Arieo-Core::arieo_core
+        Arieo-Interface-RHI::arieo_rhi_interface
     AST_GENERATE_FOLDER
         ${CMAKE_CURRENT_SOURCE_DIR}/_generated/ast
     NATIVE_CODE_GENERATE_FOLDER
