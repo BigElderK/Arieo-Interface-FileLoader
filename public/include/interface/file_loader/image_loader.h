@@ -15,6 +15,7 @@ namespace Arieo::Interface::FileLoader
 
         Interface::RHI::Format m_format;
     };
+    static_assert(Base::DLLBoundarySafeCheck<ImageBuffer>, "ImageBuffer must be DLL boundary safe");
 
     class IImageLoader
     {
