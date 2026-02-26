@@ -1,24 +1,29 @@
 #pragma once
 #include <iostream>
 #include "interface/rhi/rhi_enums.h"
+#include "interface/rhi/rhi.h"
 namespace Arieo::Interface::FileLoader
 {
-    struct ModelBuffer
+    struct ModelVertex
     {
-        struct Vertex
-        {
-            Base::Math::Vector3 pos;
-            Base::Math::Vector3 color;
-            Base::Math::Vector2 tex_coord;
-        };
+        Base::Math::Vector3 pos;
+        Base::Math::Vector3 color;
+        Base::Math::Vector2 tex_coord;
+    };
 
-        std::vector<Vertex> m_vertices;
-        std::vector<uint16_t> m_indices;
+    class IModelBuffer
+    {
+    public:
+        virtual ModelVertex* getVertices() = 0;
+        virtual size_t getVertexCount() = 0;
+        virtual uint16_t* getIndices() = 0;
+        virtual size_t getIndexCount() = 0;
     };
 
     class IModelLoader
     {
     public:
-        virtual ModelBuffer loadObj(void* buffer, size_t size) = 0;
+        virtual Base::Interface<IModelBuffer> loadObj(void* buffer, size_t size) = 0;
+        virtual void unloadObj(Base::Interface<IModelBuffer> model_buffer) = 0;
     };
 }
