@@ -20,6 +20,10 @@ namespace Arieo::Interface::FileLoader
     class IImageLoader
     {
     public:
-        virtual ImageBuffer loadDDS(const Base::InteropOld<Base::IBufferView>& buffer_view) = 0;
+        virtual ImageBuffer loadDDS(void* buffer, size_t size) = 0;
     };
 }
+
+
+
+

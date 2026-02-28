@@ -23,7 +23,11 @@ namespace Arieo::Interface::FileLoader
     class IModelLoader
     {
     public:
-        virtual Base::InteropOld<IModelBuffer> loadObj(void* buffer, size_t size) = 0;
-        virtual void unloadObj(Base::InteropOld<IModelBuffer> model_buffer) = 0;
+        virtual Base::Interop::RawRef<IModelBuffer> loadObj(void* buffer, size_t size) = 0;
+        virtual void unloadObj(Base::Interop::RawRef<IModelBuffer> model_buffer) = 0;
     };
 }
+
+
+
+
